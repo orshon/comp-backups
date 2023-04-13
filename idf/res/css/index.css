@@ -1,0 +1,64 @@
+
+@font-face {
+    font-family: 'VarelaRound-Regular';
+    src: url("../font/VarelaRound-Regular.ttf");
+}
+.bg-cover {
+    background-image: url('../img/bg2.jpg');*/
+}
+
+.btn-style {
+    background: #abc2c1;
+    font-family: 'VarelaRound-Regular';
+    font-size: 20px;
+    color: #141E30;
+    opacity: 0.8;
+    border-radius: 12px;
+    width: 130px;
+    height: 50px;
+}
+
+.container {
+    width: 500px;
+    height: 745px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: rgba(0, 0, 0, 0.65);
+    align-items: center;
+    border-radius: 3px;
+}
+
+.title {
+    font-size: 70px;
+    color: #abc2c1;
+    font-family: 'VarelaRound-Regular';
+    text-shadow: 2px 2px black;
+}
+.box {
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 0.8;
+}
+.textshow {
+    font-size: 16px;
+    color: #abc2c1;
+    font-family: 'VarelaRound-Regular';
+    direction: rtl;
+    text-shadow: 2px 2px black;
+}
+
+.img-fluid-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 95px;
+}
+
+.img-fluid-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 90px;
+    height: 85px;
+}
