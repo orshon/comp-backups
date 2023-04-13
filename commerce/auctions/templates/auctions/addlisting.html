@@ -1,0 +1,58 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2 style="text-align:center">Add Listing</h2>
+<form action="/addlisting" method="POST">
+    {% csrf_token %}
+    <hr />
+    <table>
+        <tr>
+            <td>
+                <h4> title:</h4>
+            </td>
+            <td>
+                <input type="text" name="title" placeholder="title" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4> description:</h4>
+            </td>
+            <td>
+                <input type="text" name="description" placeholder="description" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4> starting bid:</h4>
+            </td>
+            <td>
+                <input type="text" name="min_bid" placeholder="starting bid" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4> optional: category:</h4>
+            </td>
+            <td>
+                <input type="text" name="category" placeholder="category" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4> optional: picture:</h4>
+            </td>
+            <td>
+                <input type="text" name="pic_url" placeholder="picture" />
+
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input class="btn btn-outline-secondary" type="submit" name="add" value="add listing" /></td>
+        </tr>
+      
+    </table>
+</form>
+{% endblock %}

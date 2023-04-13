@@ -1,0 +1,57 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="container" style="padding: 30px;">
+    <table style="width:100%;">
+        <tr>
+            <td>
+                <form method="POST">
+                    {% csrf_token %}
+                    {% if listing.is_active %}
+                    {% if listing.seller == request.user.username %}
+                    <input type="submit" formaction="{% url 'close' listing.id %}" name="closed" value="close listing" method="POST" />
+                    {% endif %}
+                    {% else %}
+                    {% if request.user.username == maxbid.bidder_username %}
+                    <h3> your bid won! congrats! </h3>
+                    {% else %}
+                    <h3> this listing is closed! </h3>
+                    {% endif %}
+                    {% endif %}
+                    {% if not request.user.username == listing.seller and listing.is_active %}
+                    <input class="input" type="text" name="bidamount" method="POST" />
+                    <input type="submit" class="btn btn-outline-secondary" style="background: #ece5ff;" formaction="{% url 'bidding' listing.id %}" name="bid" value="bid" method="POST" />
+                    {% endif %}
+                </form><br />
+                <a href="{% url 'addwatchlist' listing.id %}"><button style="background: #ece5ff;" class="btn btn-outline-secondary" name="watchlist">add/remove from watchlist</button></a>
+                <br />
+                <br />
+                {{ message }}
+                <br />
+                <h2>{{ listing.title }}</h2><br />
+                <h4>sold by: {{ listing.seller }}</h4>
+                <h4> description: {{ listing.description }}</h4>
+                <h4> starting bid: {{ listing.min_bid }} $</h4>
+                {% if category is not None %}
+                <h4>category: {{ listing.category }} </h4>
+                {% endif %}
+            </td>
+            <td style="text-align: right;">
+                <img src="{{ listing.pic_url }}" style="height:300px; width:300px" />
+            </td>
+        </tr>
+    </table><br /><br /><div class="container" style="padding:15px; background: #ece5ff;">
+    {% for comment in comments %}
+    <h5><b>{{ comment.username }}</b> commented: </h5>
+    <h6>{{ comment.content }}</h6>
+    <h6>{{ comment.date }}</h6><hr />
+    {% endfor %}
+    <form action="{% url 'comments' listing.id %}" method="POST">
+        {% csrf_token %}
+        <h3> Add Comment </h3>
+        <textarea rows="3" cols="70" type="text" name="contentcmt" class="form-control col-lg-6" placeholder="your comment..."></textarea>
+        <input class="btn btn-outline-secondary" type="submit" value="Post Comment">
+    </form>
+</div>
+</div>
+{% endblock %}

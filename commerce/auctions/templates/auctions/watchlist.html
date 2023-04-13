@@ -1,0 +1,31 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %} Watchlist {% endblock %}
+{% block body %}
+<h1 style="text-align:center">Watchlist</h1>
+<br />
+<hr />
+
+{% for listing in listings %}
+    {% for i in listing %}
+<a href="/{{ i.id }}">
+    <div style="background: #ece5ff; padding: 20px;">
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <h2>{{ i.title }}</h2>
+                    <h6> description: {{ i.description }}</h6>
+                    <h6> starting bid: {{ i.min_bid }} $</h6>
+                </td>
+                <td style="text-align: right;">
+                    <img src="{{ i.pic_url }}" style="height:150px; width:150px" />
+                    <a href="{% url 'addwatchlist' i.id %}"><button type="button" class="btn btn-outline-secondary" name="watchlist">remove from watchlist</button></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</a>
+<hr />
+    {% endfor %}
+{% endfor %}
+{% endblock %}

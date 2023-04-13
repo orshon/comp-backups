@@ -1,0 +1,32 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div style="padding: 30px;">
+    <table style="width:100%;">
+        <tr>
+            <hr/><h2 style="text-align:center">{{ category }}</h2><hr/><br />
+            <td>
+            {% for i in list %}
+                    <a href="/{{ i.id }}">
+                        <div style="padding: 20px;">
+                            <table style="width:100%;">
+                                <tr>
+                                    <td>
+                                        <h2>{{ i.title }}</h2>
+                                        <h6> description: {{ i.description }}</h6>
+                                        <h6> starting bid: {{ i.min_bid }} $</h6>
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <img src="{{ i.pic_url }}" style="height:150px; width:150px" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </a>
+                    <hr />
+            {% endfor %}  
+                </td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

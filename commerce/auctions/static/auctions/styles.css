@@ -1,0 +1,13 @@
+
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited, ul, li, ul {
+    color: black;
+} !important
+
+a:hover, li:hover, ul:hover {
+    color: #404040;
+} !important

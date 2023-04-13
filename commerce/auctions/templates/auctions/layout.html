@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Auctions{% endblock %}</title>
+        <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+    </head>
+    <body >
+        <div><br />
+            <h1 style="text-align:center;">Auctions</h1>
+            <div style="text-align:center;">
+                {% if user.is_authenticated %}
+                Signed in as <strong>{{ user.username }}</strong>
+                {% else %}
+                Not signed in.
+                {% endif %}
+            </div><br />
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" id="index" href="{% url 'index' %}">Active Listings</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" id="logout" href="{% url 'logout' %}">Log Out</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" id="watchlist" href="/watchlist">Watchlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" id="add" href="/addlisting">Add Listing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" id="cat" href="/categories">Categories</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" id="login" href="{% url 'login' %}">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" id="register">Register</a>
+                </li>
+                {% endif %}
+            </ul>
+            <div class="tab-content">
+                <div class="container tab-pane container active" href="{% url 'index' %}" id="index"></div>
+                <div class="container tab-pane container fade" href="{% url 'login' %}" id="login"></div>
+                <div class="container tab-pane container fade" href="{% url 'logout' %}" id="logout"></div>
+                <div class="container tab-pane container fade" href="{% url 'register' %}" id="register"></div>
+                <div class="container tab-pane container fade" href="/addlisting" id="add"></div>
+                <div class="container tab-pane container fade" href="/categories" id="cat"></div>
+                <div class="container tab-pane container fade" href="/watchlist" id="watchlist"></div>
+
+            </div>
+        </div>
+            <br />
+            {% block body %}
+            {% endblock %}
+</body>
+</html>

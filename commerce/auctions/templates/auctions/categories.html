@@ -1,0 +1,17 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %} Categories {% endblock %}
+{% block body %}
+<h2 style="text-align:center">Categories</h2>
+<br />
+<table align="center" style="text-align:center;">
+    <tr>
+    {% for i in list %}
+           <td>
+               <div class="container" style="width: 200px; height: 200px; background: #ece5ff; padding: 30px;">
+                   <a style="font-size: 26px; text-align:center" href="/{{ i }}">{{ i }}</a>
+               </div>
+           </td>
+    {% endfor %}
+</tr></table>
+{% endblock %}
