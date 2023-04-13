@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "server_tcp", "server_tcp\server_tcp.pyproj", "{70CEAD41-1B0A-48D8-86CF-941A562AB5AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70CEAD41-1B0A-48D8-86CF-941A562AB5AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70CEAD41-1B0A-48D8-86CF-941A562AB5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A9917D6-AECE-4BBC-8C36-C1E9D87CB861}
+	EndGlobalSection
+EndGlobal
