@@ -1,0 +1,36 @@
+﻿<Window x:Class="hts.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hts"
+        mc:Ignorable="d"
+        Title="Window1" Height="550" Width="550" Background="#FF01101F">
+    <Grid>
+        <Label Margin="20,20,227,460" FontFamily="Gill Sans MT" FontSize="20" Foreground="#FF797A8D" FontWeight="bold">Server Checkup:</Label>
+        <Grid HorizontalAlignment="Center" Height="500" Margin="0,20,0,0" VerticalAlignment="Top" Width="500" Grid.Row="6" Grid.Column="6" Grid.RowSpan="3" Grid.ColumnSpan="3" ShowGridLines="True" UseLayoutRounding="False" MinWidth="500" MinHeight="500"/>
+        <Image Margin="183,1,136,44" Stretch="Fill" Source="cam.png" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Image Margin="183,23,136,22" Stretch="Fill" Source="cam.png" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Image Margin="183,45,136,67" Stretch="Fill" Source="cam.png" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Image Margin="0,1,113,1" Stretch="Fill" Source="server.png" RenderTransformOrigin="0.5,0.5"/>
+
+
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+
+    </Grid>
+</Window>
